@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Addition</title>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   </head>
+
+   <body>
+      <div id="app">
+
+         <span style="font-size:20px">Enter number 1</span>
+         <input v-model="display" > <br><hr>
+
+         <span style="font-size:20px">Enter number 2</span>
+         <input v-model="display1"><br>
+
+         <button @click="displaynumbers">Click</button>
+         <h2>Add Numbers {{display}} {{display1}}</h2>
+
+         <h3>Addition of two numbers is: {{total}}</h3>
+      </div>
+      <script>
+
+         new Vue({
+            el:'#app',
+            data:{
+               display:'',
+               display1:'',
+               total:''
+            },
+
+            methods:{
+               displaynumbers() {
+                  this.total= parseInt(this.display) + parseInt(this.display1);
+               }
+            }
+         })
+
+      </script>
+   </body>
+</html>

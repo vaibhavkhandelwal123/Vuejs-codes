@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>mouseon in vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-on:mouseover="change" v-on:mouseout="original">
+            <h1>{{text}}</h1>
+    </div>   
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            text:'welcome to _'
+        },
+        methods:{
+            change:function(){
+                this.text='welcome to LPU'
+            },
+            original:function(){
+                this.text='welcome to CU'
+        }
+    },
+    })
+</script>

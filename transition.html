@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transition</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .fade-enter-from {
+            opacity: 0;
+            color: rgb(247, 62, 0);
+          }
+          .fade-enter-to {
+            opacity: 1;
+            color: blue;
+          }
+          .fade-enter-active {
+            transition: all 2s ease;
+          }
+          .fade-leave-from {
+            opacity: 1;
+            color: chartreuse;
+          }
+          .fade-leave-to {
+            opacity: 0;
+            color: darkmagenta;
+          }
+          .fade-leave-active {
+            transition: all 2s ease;
+          }
+    </style>
+</head>
+<body>
+    <div id = "databinding">
+        <transition name = "fade">
+            <h1 v-if = "show" >Lovely Professional University</h1>
+        </transition>
+        <button v-on:click = "show = !show">Click Me</button>
+    </div>
+    <script>
+        var vm=new Vue({
+            el: '#databinding',
+            data: {
+                show: false
+            }
+        });
+    </script>
+</body>
+</html>
